@@ -11535,6 +11535,7 @@ module.exports = URI;
 
 var buffer = require('buffer');
 var assert = require('assert');
+// var Buffer = require('buffer').Buffer;
 
 var js = require('./js');
 var $ = require('./preconditions');
@@ -11550,6 +11551,11 @@ function equals(a, b) {
     }
   }
   return true;
+}
+
+function propBuffer(prop){
+	return new Buffer(prop);
+	// return newBuffer;
 }
 
 module.exports = {
@@ -11608,15 +11614,16 @@ module.exports = {
     return result;
   },
 
+
   /**
    * Concatenates a buffer
    *
    * Shortcut for <tt>buffer.Buffer.concat</tt>
    */
   concat: buffer.Buffer.concat,
-
   equals: equals,
   equal: equals,
+  propBuffer: propBuffer,
 
   /**
    * Transforms a number from 0 to 255 into a Buffer of size 1 with that value
@@ -27517,6 +27524,12 @@ utils.intFromLE = intFromLE;
 
 },{"bn.js":64,"minimalistic-assert":160,"minimalistic-crypto-utils":161}],133:[function(require,module,exports){
 module.exports={
+  "_args": [
+    [
+      "elliptic@6.4.0",
+      "/Users/kevinvanderpoll/anon-libs/bitcore-lib-anon"
+    ]
+  ],
   "_from": "elliptic@6.4.0",
   "_id": "elliptic@6.4.0",
   "_inBundle": false,
@@ -27540,6 +27553,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_spec": "6.4.0",
+  "_where": "/Users/kevinvanderpoll/anon-libs/bitcore-lib-anon",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -54520,7 +54534,7 @@ module.exports={
     "lint": "gulp lint",
     "test": "mocha"
   },
-  "version": "1.0.8"
+  "version": "1.0.9"
 }
 
 },{}],"bitcore-lib-anon":[function(require,module,exports){
